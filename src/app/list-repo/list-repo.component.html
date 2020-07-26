@@ -1,0 +1,24 @@
+<div class="container">
+  <ul class="list-group list-group-flush"  >
+    <li class="list-group-item" *ngFor="let repos of repo.items" >
+    <div class="media mt-3">
+        <img src="{{repos.owner.avatar_url}}" class="align-self-center mr-3" style="width:60px">
+        <div class="media-body">
+        <h4>{{repos.name}}</h4>
+        <p>{{repos.description}} </p>
+          <p>  <button type="button" class="btn btn-outline-dark" >Stars: {{repos.stargazers_count}}k</button>  
+            
+                <button type="button" class="btn btn-outline-dark">Issues: {{repos.open_issues}}k</button> 
+        Submitted 30  days  ago by {{repos.name}}
+        </p>
+        </div>
+    </div>
+    </li>
+   
+  </ul>
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><button  class="page-link" (click)="pagePrevious()">Previous</button ></li>
+    <li class="page-item"><a class="page-link" href="#">{{page}}</a></li>
+    <li class="page-item"><button class="page-link" (click)="pageNext()">Next</button></li>
+  </ul>
+  </div>
